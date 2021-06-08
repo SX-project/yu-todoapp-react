@@ -41,9 +41,15 @@ export const App = () => {
         setCompleteTodos(newCompleteTodos);
     };
 
+    const handleKeyDown = (e) => {
+        if (e.keyCode === 13) {
+            onClickAdd()
+        }
+    };
+
     return(
         <>
-           <InputTodo todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd} disabled={incompleteTodos.length>=5} />
+           <InputTodo keyDown={(e) => handleKeyDown(e)} todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd} disabled={incompleteTodos.length>=5} />
            {incompleteTodos.length>=5 && <p style={{ color:"red" }}>Todoが5個溜まったよ、消化して～。</p>}
            <IncompleteTodos onClickComplete={onClickComplete} onCLickDelete={onCLickDelete} incompleteTodos={incompleteTodos} />
            <CompleteTodos onClickReturn={onClickReturn} completeTodos={completeTodos}/>

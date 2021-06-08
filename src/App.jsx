@@ -43,7 +43,7 @@ export const App = () => {
 
     const handleKeyDown = (e) => {
         if (e.keyCode === 13) {
-            onClickAdd()
+            onClickAdd();
         }
     };
 

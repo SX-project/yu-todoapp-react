@@ -49,7 +49,6 @@ export const App = () => {
 
     return(
         <>
-           <p>おはよう</p>
            <InputTodo keyDown={(e) => handleKeyDown(e)} todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd} disabled={incompleteTodos.length>=5} />
            {incompleteTodos.length>=5 && <p style={{ color:"red" }}>Todoが5個溜まったよ、消化して～。</p>}
            <IncompleteTodos onClickComplete={onClickComplete} onCLickDelete={onCLickDelete} incompleteTodos={incompleteTodos} />
